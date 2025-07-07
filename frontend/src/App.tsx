@@ -14,7 +14,7 @@ const App: React.FC = () => {
   const [events, setEvents] = useState<Event[]>([]);
   const [countdown, setCountdown] = useState(15);
   useEffect(() => {
-    let timer: NodeJS.Timeout;
+    let timer: ReturnType<typeof setInterval>;
     const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
     const fetchEvents = async () => {
